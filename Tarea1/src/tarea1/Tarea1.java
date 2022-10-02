@@ -1,12 +1,9 @@
-
 package tarea1;
+import OrdenCompra.tarea1;
+import java.util.Date;
 
 public class Tarea1 {
-
-    
-    public static void main(String[] args) {
-       System.out.println("Prueba");
-       int x;
+     public static void main(String[] args) {
+       
     }
-    
 }
