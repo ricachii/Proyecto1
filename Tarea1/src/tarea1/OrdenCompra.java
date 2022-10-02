@@ -57,6 +57,9 @@ class Articulo{
     private String nombre;
     private String descripcion;
     private float precio;
+    public Articulo(){
+        
+    }
     
     public void setPeso(float x){
         this.peso = x;
