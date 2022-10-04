@@ -1,10 +1,12 @@
 package tarea1;
-import OrdenCompra.tarea1;
-import Pago.tarea1;
+import tarea1.OrdenCompra;
+import tarea1.Pago;
 import java.util.Date;
 
 public class Tarea1 {
      public static void main(String[] args) {
-      System.out.println("HOla"); 
+         OrdenCompra n = new OrdenCompra();
+         n.toString();
+
      }
 }
