@@ -13,9 +13,17 @@ public class Cliente {
         
     }
     
+    public String toString(){
+        return "Nombre Cliente: " + this.nombre +" Rut: " + this.rut;
+    }
+    
     
 }
 class Direccion {
     private String direccion;
+    
+    public String toString(){
+        return "Direccion es: " + this.direccion;
+    }
     
 }
