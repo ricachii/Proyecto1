@@ -8,16 +8,25 @@ public class DocTributario {
     private Date fecha;
     
     public void setNumero(String aa){
-        this.numero = aa;
-                
+        this.numero = aa;                
+    }
+    
+    public String getNumero(){
+        return this.numero;
     }
     
     public void setRut(String ru){
         this.rut = ru;
     }
+    public String getRut(){
+        return this.rut;
+    }
     
     public void setFecha(Date da){
         this.fecha = da;
+    }
+    public Date getFecha(){
+        return this.fecha;
     }
     
     public String toString(){
