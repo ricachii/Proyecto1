@@ -2,7 +2,8 @@ package tarea1;
 import java.util.Date;
 
 
-public class DocTributario {
+abstract class DocTributario {
+    private Direccion di;
     private String numero;
     private String rut;
     private Date fecha;

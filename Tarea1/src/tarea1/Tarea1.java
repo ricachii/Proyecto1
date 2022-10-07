@@ -7,6 +7,8 @@ public class Tarea1 {
      public static void main(String[] args) {
          OrdenCompra n = new OrdenCompra();
          n.toString();
+         Boleta b = new Boleta();
+        
 
      }
 }

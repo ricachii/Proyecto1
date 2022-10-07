@@ -2,6 +2,7 @@ package tarea1;
 import java.util.Date;
 
 abstract class Pago{
+    private OrdenCompra orc1;
     private float monto;
     private Date fecha;
     public Pago(){
