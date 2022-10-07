@@ -3,6 +3,7 @@ package tarea1;
 import java.util.Date;
 
 class OrdenCompra{
+    private DetalleOrden det;
     private DocTributario dt;
     private Cliente cl;
     private Date fecha;
