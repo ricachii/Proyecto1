@@ -3,6 +3,9 @@ package tarea1;
 import java.util.Date;
 
 class OrdenCompra{
+    private DetalleOrden det;
+    private DocTributario dt;
+    private Cliente cl;
     private Date fecha;
     private String estado;
     
@@ -32,6 +35,8 @@ class OrdenCompra{
     }
 }
 class DetalleOrden{
+   private OrdenCompra orc;
+   private Articulo ar;
    private int cantidad;
    public int calcPrecio(){
        return 100;
