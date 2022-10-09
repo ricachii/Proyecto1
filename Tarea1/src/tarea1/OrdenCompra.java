@@ -1,6 +1,8 @@
 package tarea1;
 
+
 import java.util.Date;
+
 
 class OrdenCompra{
     private Date fecha;
@@ -29,6 +31,10 @@ class OrdenCompra{
     }
     public String getEstado(){
         return estado;
+    }
+    public String toString(){
+        
+        return "El estado de su compra es: " + estado + " La fecha de compra es: " + fecha;
     }
 }
 class DetalleOrden{
@@ -84,5 +90,9 @@ class Articulo{
     }
     public float getPrecio(){
         return precio;
+    }
+    public String toString(){
+        
+        return "Descripción del articulo: " + descripcion + " Usred va a llevar un " + nombre;
     }
 }
