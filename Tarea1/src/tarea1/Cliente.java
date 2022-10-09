@@ -4,9 +4,10 @@ package tarea1;
 public class Cliente {
     private String nombre;
     private String rut;
+    private Direccion location;
     
-    public Cliente(){
-        
+    public Cliente(Direccion l1){
+        location = l1;
     }
     
     public void setNombre(String s){
@@ -31,18 +32,18 @@ public class Cliente {
     
     
     public String toString(){
-        return "Nombre Cliente: " + this.nombre +" Rut: " + this.rut;
+        return "Nombre Cliente: " + this.nombre +"\nRut: " + this.rut;
     }
     
     
 }
 class Direccion {
     private String direccion;
-    public void setNombre(String s){    
+    public void setDireccion(String s){    
         this.direccion = s;
         
     }
-    public String getNombre(){
+    public String getDireccion(){
         return this.direccion;
         
     }

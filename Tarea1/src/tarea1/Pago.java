@@ -6,8 +6,9 @@ abstract class Pago{
     private OrdenCompra orc1;
     private float monto;
     private Date fecha;
-    public Pago(){
-                    }
+    public Pago(OrdenCompra o1){
+        orc1 = o1;
+    }
 
     public String toString(){
         return "La fecha de pago es: " + fecha;
@@ -21,24 +22,31 @@ abstract class Pago{
     public float getPrecio(){
         return orc1.calcPrecio();
     }
+    public void setFecha(Date f1){
+        fecha = f1;
+    }
+    public Date getFecha(){
+        return fecha;
+    }
 
 }
 class Efectivo extends Pago{
-    public Efectivo(){
-        super();
+    public Efectivo(OrdenCompra o2){
+        super(o2);
     }
     public float calcDevolucion(){ 
         float x;
         x = getmonto() - getPrecio();
         return x;
     }
+    
 }
 class Transferencia extends Pago{
     private String banco;
     private String numCuenta;
     
-    public Transferencia(){
-        super();
+    public Transferencia(OrdenCompra o2){
+        super(o2);
     }
     public void setBanco(String bank){
         this.banco = bank;
@@ -54,15 +62,15 @@ class Transferencia extends Pago{
     }
     public String toString(){
         
-        return "Su banco es: " + banco + " Su numero de cuenta es: " + numCuenta;
+        return "Su banco es: " + banco + "\nSu numero de cuenta es: " + numCuenta;
     }
 }
 class Tarjeta extends Pago{
     private String tipo;
     private String numTransaccion;
    
-    public Tarjeta(){
-        super();
+    public Tarjeta(OrdenCompra o2){
+        super(o2);
     }
     public void setTipo(String type){
         this.tipo = type;
@@ -78,6 +86,6 @@ class Tarjeta extends Pago{
     }
     public String toString(){
         
-        return "Usted tiene una tarjeta de: " + tipo + " El numero de su transaccion es: " + numTransaccion;
+        return "Usted tiene una tarjeta de: " + tipo + "\nEl numero de su transaccion es: " + numTransaccion;
     }
 }

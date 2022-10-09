@@ -8,6 +8,10 @@ abstract class DocTributario {
     private String rut;
     private Date fecha;
     
+    public DocTributario(Direccion d1){
+        di = d1;
+    }
+    
     public void setNumero(String aa){
         this.numero = aa;                
     }
@@ -31,20 +35,20 @@ abstract class DocTributario {
     }
     
     public String toString(){
-        return "El numero es: " + this.numero + " el rut es: " + this.rut + " la fecha es: " + this.fecha;
+        return "El numero es: " + this.numero + "\nEl rut es: " + this.rut + "\nLa fecha es: " + this.fecha;
     }
     
 }
 
 class Boleta extends DocTributario {
-    public Boleta(){
-        
+    public Boleta(Direccion d2){
+        super(d2);
     }
 }
 
 class Factura extends DocTributario {
-    public Factura(){
-        
+    public Factura(Direccion d2){
+        super(d2);
     }
 }
             

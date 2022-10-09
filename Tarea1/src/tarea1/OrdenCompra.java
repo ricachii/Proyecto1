@@ -9,17 +9,19 @@ class OrdenCompra{
     private Date fecha;
     private String estado;
     
-    public OrdenCompra(DetalleOrden det1){
+    public OrdenCompra(DetalleOrden det1,Cliente p1,DocTributario t1){
         det = det1;
+        cl = p1;
+        dt = t1;
     }
     
     public float calcPrecioSinIVA(){
-        return 0;
+        return det.calcPrecioSinIVA();
     }
 
     public float calcPeso(){
  
-        return det.calcPrecioSinIVA();
+        return det.calcPeso();
     }
     public float calcIVA(){
         return det.calcIVA();
@@ -27,9 +29,7 @@ class OrdenCompra{
     public float calcPrecio(){
         return det.calcPrecio();
     }
-    public float Peso(){
-        return det.calcPeso();
-    }
+   
     public void setFecha(Date f){
         this.fecha = f;
     }
@@ -74,6 +74,11 @@ class DetalleOrden{
    public int getCantidad(){
        return cantidad;
    }
+   public String toString(){
+        
+        return "Usted ha pedido un/unas " +ar.getNombre()+ " \nSu peso es: " +calcPeso()+ "\nSu precio es: " +calcPrecioSinIVA()+ "\nCon " +calcIVA()+ "% de IVA" +"\nEl total es : " +calcPrecio();
+    }
+   
 }
 class Articulo{
     private float peso;
