@@ -77,7 +77,7 @@ public class Tarea1 {
          System.out.println(ar3.toString());
          DetalleOrden v3 = new DetalleOrden(ar3);
          
-          v3.calcPrecio();
+         v3.calcPrecio();
          v3.calcPrecioSinIVA();
          v3.calcIVA();
          v3.calcPeso();
