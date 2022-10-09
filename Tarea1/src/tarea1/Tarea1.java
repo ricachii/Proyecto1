@@ -66,6 +66,38 @@ public class Tarea1 {
          ord2.getEstado();
          String s1 = ord2.toString();
          System.out.println(s1);
+         
+         System.out.print("\n");
+         
+         Articulo ar3 = new Articulo();
+         ar3.setPeso(10);
+         ar3.setPrecio(10);
+         ar3.setNombre("Papas Fritas");
+         ar3.setDescripcion("Bolsa de papas fritas tamaño familiar");
+         System.out.println(ar3.toString());
+         DetalleOrden v3 = new DetalleOrden(ar3);
+         
+          v3.calcPrecio();
+         v3.calcPrecioSinIVA();
+         v3.calcIVA();
+         v3.calcPeso();
+         v3.setCantidad(10);
+         v3.getCantidad();
+         System.out.println("Usted ha pedido un/unas " +ar3.getNombre()+ " \nSu peso es: " +v3.calcPeso()+ "\nSu precio es: " +v3.calcPrecioSinIVA()+ "\nCon " +v3.calcIVA()+ "% de IVA" +"\nEl total es : " +v3.calcPrecio());
+         
+         OrdenCompra ord3 = new OrdenCompra(v3);
+         ord3.calcIVA();
+         ord3.calcPrecio();
+         ord3.calcPrecioSinIVA();
+         ord3.Peso();
+         Date fecha3 = new Date(06, 02, 2022);
+         ord3.setFecha(fecha3);
+         ord3.getFecha();
+         ord3.setEstado("La compra ha sido procesada exitosamente");
+         ord3.getEstado();
+         String s2 = ord3.toString();
+         System.out.println(s2);
+        
         
 
      }
