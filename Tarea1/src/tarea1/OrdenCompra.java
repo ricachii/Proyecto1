@@ -1,24 +1,25 @@
 package tarea1;
-
-
 import java.util.Date;
 
 
 class OrdenCompra{
+    private DetalleOrden det;
+    private DocTributario dt;
+    private Cliente cl;
     private Date fecha;
     private String estado;
     
-    public int calcPrecioSinIVA(){
-        return 0;
+    public float calcPrecioSinIVA(){
+        return det.calcPrecioSinIVA();
     }
-    public int calcIVA(){
-        return 19;
+    public float calcIVA(){
+        return det.calcIVA();
     }
-    public int calcPrecio(){
-        return 100;
+    public float calcPrecio(){
+        return det.calcPrecio();
     }
-    public int Peso(){
-        return 10;
+    public float Peso(){
+        return det.calcPeso();
     }
     public void setFecha(Date f){
         this.fecha = f;
@@ -38,18 +39,20 @@ class OrdenCompra{
     }
 }
 class DetalleOrden{
+   private OrdenCompra orc;
+   private Articulo ar;
    private int cantidad;
-   public int calcPrecio(){
-       return 100;
+   public float calcPrecio(){
+       return cantidad * ar.getPrecio() * (float) 1.19;
    }
-   public int calcPrecioSinIVA(){
-       return 0;
+   public float calcPrecioSinIVA(){
+       return cantidad * ar.getPrecio();
    }
-   public int calcIVA(){
-       return 19;
+   public float calcIVA(){
+       return cantidad *(float) 19;
    }
-   public int calcPeso(){
-       return 10;
+   public float calcPeso(){
+       return cantidad * ar.getPeso();
    }
    public void setCantidad(int z){
        this.cantidad = z;
