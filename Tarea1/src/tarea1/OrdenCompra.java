@@ -38,16 +38,16 @@ class DetalleOrden{
    private OrdenCompra orc;
    private Articulo ar;
    private int cantidad;
-   public int calcPrecio(){
-       return 100;
+   public float calcPrecio(){
+       return cantidad * ar.getPrecio() * (float) 1.19;
    }
-   public int calcPrecioSinIVA(){
-       return 0;
+   public float calcPrecioSinIVA(){
+       return cantidad * ar.getPrecio();
    }
-   public int calcIVA(){
-       return 19;
+   public float calcIVA(){
+       return cantidad *(float) 19;
    }
-   public int calcPeso(){
+   public float calcPeso(){
        return 10;
    }
    public void setCantidad(int z){
