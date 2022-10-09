@@ -1,6 +1,6 @@
 package tarea1;
-
 import java.util.Date;
+
 
 class OrdenCompra{
     private DetalleOrden det;
@@ -12,14 +12,19 @@ class OrdenCompra{
     public float calcPrecioSinIVA(){
         return 0;
     }
+
+    public float calcPeso(){
+ 
+        return det.calcPrecioSinIVA();
+    }
     public float calcIVA(){
-        return 19;
+        return det.calcIVA();
     }
     public float calcPrecio(){
-        return 100;
+        return det.calcPrecio();
     }
-    public float calcPeso(){
-        return 10;
+    public float Peso(){
+        return det.calcPeso();
     }
     public void setFecha(Date f){
         this.fecha = f;
@@ -32,6 +37,10 @@ class OrdenCompra{
     }
     public String getEstado(){
         return estado;
+    }
+    public String toString(){
+        
+        return "El estado de su compra es: " + estado + " La fecha de compra es: " + fecha;
     }
 }
 class DetalleOrden{
@@ -48,7 +57,7 @@ class DetalleOrden{
        return cantidad *(float) 19;
    }
    public float calcPeso(){
-       return 10;
+       return cantidad * ar.getPeso();
    }
    public void setCantidad(int z){
        this.cantidad = z;
@@ -89,5 +98,9 @@ class Articulo{
     }
     public float getPrecio(){
         return precio;
+    }
+    public String toString(){
+        
+        return "Descripción del articulo: " + descripcion + " Usred va a llevar un " + nombre;
     }
 }

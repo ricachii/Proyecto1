@@ -1,5 +1,6 @@
 package tarea1;
 import java.util.Date;
+import tarea1.OrdenCompra;
 
 abstract class Pago{
     private OrdenCompra orc1;
@@ -7,14 +8,29 @@ abstract class Pago{
     private Date fecha;
     public Pago(){
                     }
-    
+
+    public String toString(){
+        return "La fecha de pago es: " + fecha;
+    }
+    public void setmonto(float m1){
+        this.monto = m1;
+    }
+    public float getmonto(){
+        return this.monto;
+    }
+    public float getPrecio(){
+        return orc1.calcPrecio();
+    }
+
 }
 class Efectivo extends Pago{
     public Efectivo(){
         super();
     }
-    public float calcDevolucion(){ //No se aceptan devoluciones
-        return 100;
+    public float calcDevolucion(){ 
+        float x;
+        x = getmonto() - getPrecio();
+        return x;
     }
 }
 class Transferencia extends Pago{
@@ -36,6 +52,10 @@ class Transferencia extends Pago{
     public String getNumCuenta(){
         return numCuenta;
     }
+    public String toString(){
+        
+        return "Su banco es: " + banco + " Su numero de cuenta es: " + numCuenta;
+    }
 }
 class Tarjeta extends Pago{
     private String tipo;
@@ -55,5 +75,9 @@ class Tarjeta extends Pago{
     }
     public String getNumTransaccion(){
         return numTransaccion;
+    }
+    public String toString(){
+        
+        return "Usted tiene una tarjeta de: " + tipo + " El numero de su transaccion es: " + numTransaccion;
     }
 }
