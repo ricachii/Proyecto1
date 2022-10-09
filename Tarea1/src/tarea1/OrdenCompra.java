@@ -9,6 +9,10 @@ class OrdenCompra{
     private Date fecha;
     private String estado;
     
+    public OrdenCompra(DetalleOrden det1){
+        det = det1;
+    }
+    
     public float calcPrecioSinIVA(){
         return det.calcPrecioSinIVA();
     }
@@ -35,13 +39,18 @@ class OrdenCompra{
     }
     public String toString(){
         
-        return "El estado de su compra es: " + estado + " La fecha de compra es: " + fecha;
+        return "El estado de su compra es: " + estado + ", la fecha de compra es: " + fecha;
     }
 }
 class DetalleOrden{
    private OrdenCompra orc;
    private Articulo ar;
    private int cantidad;
+   public DetalleOrden(Articulo ar1){
+       ar=ar1;
+   }
+   
+   
    public float calcPrecio(){
        return cantidad * ar.getPrecio() * (float) 1.19;
    }
@@ -96,6 +105,6 @@ class Articulo{
     }
     public String toString(){
         
-        return "Descripción del articulo: " + descripcion + " Usred va a llevar un " + nombre;
+        return "Usted va a llevar un/una: " + nombre + " , Descripcion del articulo: " + descripcion;
     }
 }
