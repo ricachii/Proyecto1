@@ -7,13 +7,14 @@ abstract class Pago{
     private Date fecha;
     public Pago(){
                     }
+    
 }
 class Efectivo extends Pago{
     public Efectivo(){
         super();
     }
     public float calcDevolucion(){ //No se aceptan devoluciones
-        return 0; 
+        return 100;
     }
 }
 class Transferencia extends Pago{

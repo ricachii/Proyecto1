@@ -9,16 +9,16 @@ class OrdenCompra{
     private Date fecha;
     private String estado;
     
-    public int calcPrecioSinIVA(){
+    public float calcPrecioSinIVA(){
         return 0;
     }
-    public int calcIVA(){
+    public float calcIVA(){
         return 19;
     }
-    public int calcPrecio(){
+    public float calcPrecio(){
         return 100;
     }
-    public int Peso(){
+    public float calcPeso(){
         return 10;
     }
     public void setFecha(Date f){
